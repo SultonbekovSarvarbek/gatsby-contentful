@@ -7,8 +7,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogPost = path.resolve('./src/templates/blog-post.js')
 
   const result = await graphql(
-    `
-      {
+    `{
         allContentfulBlogPost {
           nodes {
             title
@@ -38,7 +37,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostSlug = index === 0 ? null : posts[index - 1].slug
       const nextPostSlug =
         index === posts.length - 1 ? null : posts[index + 1].slug
-
       createPage({
         path: `/blog/${post.slug}/`,
         component: blogPost,

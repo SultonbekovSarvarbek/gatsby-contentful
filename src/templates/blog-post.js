@@ -16,6 +16,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
+          <p>Blog post js</p>
         <Seo
           title={post.title}
           description={post.description.childMarkdownRemark.excerpt}
