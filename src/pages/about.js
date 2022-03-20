@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import Container from '../components/container'
 class AboutIndex extends React.Component {
@@ -10,11 +9,9 @@ class AboutIndex extends React.Component {
     return (
       <Layout>
           <Container>
-                <p>tite: {info.text}</p>
-                <p>description: {info.description}</p>
+                <p class="about-title">tite: {info.text}</p>
+                <p class="about-description">description: {info.description}</p>
                 <p>createdAt: {info.createdAt}</p>
-
-                <GatsbyImage alt={info.aboutImage.file.title} image={info.aboutImage.file.url} />
           </Container>
       </Layout>
     )
@@ -29,14 +26,6 @@ query AboutQuery {
           text
           description
           createdAt
-          aboutImage {
-            file {
-              url
-              fileName
-              title
-              contentType
-            }
-          }
         }
       }
   }
